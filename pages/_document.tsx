@@ -1,11 +1,11 @@
-import { Html, Head, Main, NextScript } from 'next/document'
- 
+import { Head, Html, Main, NextScript } from 'next/document'
+import React from 'react'
+
 export default function Document() {
   return (
     <Html>
       <Head />
       <body>
-        123456
         <Main />
         <NextScript />
       </body>
