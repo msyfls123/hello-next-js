@@ -1,4 +1,8 @@
 import type { Config } from 'tailwindcss'
+import colors from 'tailwindcss/colors'
+import plugin from 'tailwindcss/plugin'
+
+import color, { colorBase, colorTheme, settingBase } from './config/color'
 
 const config: Config = {
   content: [
@@ -14,7 +18,17 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    colors: {
+      ...colors,
+      ...colorTheme,
+      day: 'rgba(112, 221, 231, <alpha-value>)'
+    }
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addBase }) => {
+      addBase(colorBase)
+      addBase(settingBase)
+    })
+  ],
 }
 export default config
